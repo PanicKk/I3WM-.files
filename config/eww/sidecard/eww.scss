@@ -1,0 +1,10 @@
+@import "src/scss/variables";
+@import "src/scss/overrides";
+
+@import "src/scss/sidebar/index.scss";
+
+@import "src/scss/config";
+
+window{
+  background-color: $bg;
+}

@@ -1,0 +1,28 @@
+# Aesthetic Color
+# Created by https://github.com/rxyhn
+
+colors:
+  primary:
+    background: '#171a1f'
+    foreground: '#a9b1d6'
+  cursor:
+    text:   CellForeground
+    cursor: '#D9D7D6'
+  bright:
+    black:   '#444444'
+    red:     '#FF2740'
+    green:   '#ABE15B'
+    yellow:  '#FFD242'
+    blue:    '#0095FF'
+    magenta: '#9A5FEB'
+    cyan:    '#67FFF0'
+    white:   '#F5F5F5'
+  normal:
+    black:   '#1C252C'
+    red:     '#e05f65'
+    green:   '#78dba9'
+    yellow:  '#f1cf8a'
+    blue:    '#70a5eb'
+    magenta: '#c68aee'
+    cyan:    '#74bee9'
+    white:   '#dee1e6'

@@ -1,0 +1,45 @@
+.dashboard-box {
+    .system-btn {
+        margin-top: 1em;
+        padding: 1em 1.5em;
+        background-color: $bgSecondary;
+        border-radius: 10px;
+
+        button {
+            font-size: 32px;
+            margin: .5em .5em;
+            padding: .5em .5em;
+            background-color: $bgSecondary;
+            border-radius: 10px;
+            font-family: "Font Awesome 6 Free";
+
+            &:hover {
+                color: $accent;
+            }
+        }
+
+        .network-btn {
+            color: $bg;
+
+            &:hover {
+                color: $bg;
+            }
+        }
+
+        .lock-btn {
+            color: $blue;
+
+            &:hover {
+              color: $blue-desaturated;
+            }
+        }
+
+        .reboot-btn {
+            color: $magenta;
+        }
+
+        .shutdown-btn {
+            color: $red;
+        }
+    }
+}
