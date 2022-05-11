@@ -51,4 +51,4 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 
 <br>
 
->\*Notice: All of the content above is slightly modified to match my needs, so you can realte to their personal repos for more accurcy :)
+>\*Notice: All of the content above is slightly modified to match my needs, so you can relate to their personal repos for more accuracy :)
