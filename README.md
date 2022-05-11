@@ -1,7 +1,7 @@
 <h1 align="center">PanicKk's I3WM rice!<h1>
 
 <div align="center">
-  <img src="./showcase/welcome.png"/>
+  <img src="./assets/welcome.png"/>
 </div>
 
 <div align="center">
@@ -9,7 +9,7 @@
 </div>
 
 # :milky_way: <samp>INFORMATION</samp>
-<img src="./showcase/polybar_showcase.png" alt="Showcase" align="right" width="400px"/>
+<img src="./assets/polybar_showcase.png" alt="Showcase" align="right" width="400px"/>
 
 # :wave: Welcome
 ### :bullettrain_front: You have now reached the destination of my personal i3wm rice dotfiles :)
@@ -31,9 +31,9 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
 # Showcase
-![Showcase 1](./showcase/showcase.png)
+![Showcase 1](./assets/showcase.png)
 
-![Showcase 2](./showcase/showcase_2.png)
+![Showcase 2](./assets/showcase_2.png)
 
 <!-- CREDITS -->
 ## :sparkles: <samp>CREDITTS</samp>
