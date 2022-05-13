@@ -5,20 +5,21 @@
 </div>
 
 <div align="center">
-    <img src="https://img.shields.io/badge/PanicKk-I3WM%20.files-70a5eb?style=for-the-badge&logo=appveyor&labelColor=171a1f&color=0095ff"/>
+    <img src="https://img.shields.io/badge/PanicKk-I3WM%20.files-70a5eb?style=for-the-badge&labelColor=171a1f&color=0095ff"/>
 </div>
 
 # :milky_way: <samp>INFORMATION</samp>
-<img src="./assets/polybar_showcase.png" alt="Showcase" align="right" width="400px"/>
+<img src="./assets/main_showcase.png" alt="Showcase" align="right" width="400px"/>
 
 # :wave: Welcome
 ### :bullettrain_front: You have now reached the destination of my personal i3wm rice dotfiles :)
 It has been one hell of a crazy journey untill I was able to get my way around good ricing.
 
 I am finally able to say that I am happy with what I have created, 
-with the inspiration from the great community of [ricers](https://www.reddit.com/r/unixporn)and the hard work of the people listed [below](#-credits).
+with the inspiration from the great community of [ricers](https://www.reddit.com/r/unixporn) and the hard work of the people listed [below](#-credits).
 
-## ~ Basic Information ~
+# :cyclone: ~ Basic Information ~
+<img src="./assets/workflow_showcase.png" alt="Workflow Showcase" align="left" width="400px"/>
 - **OS:** [Manjaro Linux (arch linux wannabe)](https://manjaro.org/download/#i3)
 - **WM:** [i3](https://i3wm.org/)
 - **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
@@ -31,9 +32,11 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
 # Showcase
-![Showcase 1](./assets/showcase.png)
+### Dashboard
+![Dashboard](./assets/dashboard.png)
 
-![Showcase 2](./assets/showcase_2.png)
+### Bars - | -
+![Bars](./assets/bars_showcase.png)
 
 <!-- CREDITS -->
 ## :sparkles: <samp>CREDITTS</samp>

@@ -174,7 +174,7 @@ bindsym $mod+r mode "resize"
 
 # window colors
 #                        border    bg     txt  indicator
-client.focused          #0095ff #0095ff #ffffff #0095ff
+client.focused          #0095ff #0095ff #0095ff #0095ff
 client.focused_inactive #b6beca #22262e #ffffff #22262e
 client.unfocused        #b6beca #22262e #ffffff #22262e
 client.urgent           #e05f65 #171a1f #ffffff #e05f65
@@ -186,8 +186,8 @@ for_window [class=".*"] border pixel 5
 #gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
 gaps inner 10
 gaps outer 25
-gaps top 10
-gaps left 55
+gaps top 55
+gaps left 0
 gaps bottom 10
 gaps right 0
 
