@@ -17,6 +17,7 @@ It has been one hell of a crazy journey untill I was able to get my way around g
 
 I am finally able to say that I am happy with what I have created, 
 with the inspiration from the great community of [ricers](https://www.reddit.com/r/unixporn) and the hard work of the people listed [below](#-credits).
+<br><br><br><br>
 
 # :cyclone: ~ Basic Information ~
 <img src="./assets/workflow_showcase.png" alt="Workflow Showcase" align="left" width="400px"/>
@@ -30,6 +31,7 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 - **File Manager:** [Thunar](https://docs.xfce.org/xfce/thunar/start)
 - **Browser:** [Brave](https://brave.com/), [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
+<br><br><br><br>
 
 # Showcase
 ### Dashboard
