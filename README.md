@@ -20,7 +20,7 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 <br><br><br><br>
 <br><br><br><br>
 
-# :cyclone: ~ Software Information ~
+# :cyclone: Software Information ~
 <img src="./assets/workflow_showcase.png" alt="Workflow Showcase" align="left" width="400px"/>
 
 - **OS:** [Manjaro Linux (arch linux wannabe)](https://manjaro.org/download/#i3)
@@ -34,7 +34,7 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 - **Browser:** [Brave](https://brave.com/), [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 <br><br><br><br>
-<br><br><br><br>
+<br><br><br><br><br>
 
 # Showcase
 ### Dashboard
