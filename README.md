@@ -19,7 +19,7 @@ I am finally able to say that I am happy with what I have created,
 with the inspiration from the great community of [ricers](https://www.reddit.com/r/unixporn) and the hard work of the people listed [below](#-credits).
 <br><br><br><br>
 <br><br><br><br>
-<br>
+<br><br><br>
 
 # :cyclone: Software Information ~
 <img src="./assets/workflow_showcase.png" alt="Workflow Showcase" align="left" width="400px"/>
@@ -36,7 +36,7 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 <br><br><br><br>
 <br><br><br><br>
-<br>
+<br><br><br>
 
 # Showcase
 ### Dashboard
