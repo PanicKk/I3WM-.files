@@ -18,10 +18,11 @@ It has been one hell of a crazy journey untill I was able to get my way around g
 I am finally able to say that I am happy with what I have created, 
 with the inspiration from the great community of [ricers](https://www.reddit.com/r/unixporn) and the hard work of the people listed [below](#-credits).
 <br><br><br><br>
-<br><br><br><br>
+<br><br><br><br><br>
 
-# :cyclone: ~ Basic Information ~
+# :cyclone: ~ Software Information ~
 <img src="./assets/workflow_showcase.png" alt="Workflow Showcase" align="left" width="400px"/>
+
 - **OS:** [Manjaro Linux (arch linux wannabe)](https://manjaro.org/download/#i3)
 - **WM:** [i3](https://i3wm.org/)
 - **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
