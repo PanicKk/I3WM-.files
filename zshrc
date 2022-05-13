@@ -171,6 +171,8 @@ alias pacman='pacman --color=auto'
 alias runblender='~/Desktop/Apps/Blender/blender'
 alias tb='taskbook'
 alias mp3towav="sh ~/custom-scripts/mp3towav.sh"
+alias decay="sh ~/custom-scripts/print_colors.sh"
+alias panes="sh ~/custom-scripts/panes.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
