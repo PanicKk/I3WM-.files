@@ -53,6 +53,7 @@ with the inspiration from the great community of [ricers](https://www.reddit.com
 | ----------- | ----------- |
 | [@siduck](https://github.com/siduck/) | [NvChad](https://github.com/NvChad/NvChad) |
 | [@rxyhn](https://github.com/rxyhn/) | [eww bar](https://github.com/rxyhn/bspdots) |
+| [@AlphaTechnolog](https://github.com/AlphaTechnolog) | eww horizontal bar |
 | [@rxyhn](https://github.com/rxyhn/) | [eww dashboard](https://github.com/rxyhn/bspdots) |
 | [@janleigh](https://github.com/janleigh/) | [eww sidecard](https://github.com/janleigh/dotfiles)
 | [@adi1090x](https://github.com/adi1090x/) | [polybar](https://github.com/adi1090x/polybar-themes) |
