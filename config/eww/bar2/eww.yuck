@@ -1,0 +1,186 @@
+(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar2")
+
+;; Launcher ;;
+(defwidget launcher[]
+  (box :orientation "h"
+       :class "launcher"
+       :tooltip "Launch apps"
+    (button :class "dispatcher" :onrightclick "scripts/popup powermenu"  :onclick "scripts/popup launcher" "")
+  )
+)
+
+;; Workspaces ;;
+(defwidget workspaces []
+  (literal :content workspace :class "works")
+)
+(deflisten workspace "scripts/getWorkspacesbsp")
+
+;; Left Side Widgets ;;
+(defwidget left []
+  (box :orientation "h"
+       :space-evenly "false"
+       :halign "start"
+       :class "left"
+  (launcher)
+  (workspaces))
+)
+
+;; Title ;;
+(defwidget wintitle []
+  (label :text xtitle :class "wintitle")
+)
+(defpoll xtitle :interval "1s" "scripts/getWinTitle")
+
+;; Center Widgets ;;
+(defwidget center []
+  (box :class "center-widgets"
+       :space-evenly "false"
+       :halign "center"
+       :orientation "h"
+    (wintitle)
+  )
+)
+;; Seperator ;;
+(defwidget sep []
+  (label :class "sep" :text "")
+)
+
+;; Drop-down (used for calendar) ;;
+(defwidget dropdown [onclick ?class ?tooltip]
+  (button :tooltip tooltip :class class :onclick onclick "")
+)
+
+;; Time & Date ;;
+(defwidget datebox []
+  (box :orientation "h"
+       :class "date-box"
+       :space-evenly "false"
+    (label :text dateval :class "content")
+    (sep)
+    (dropdown
+      :onclick "scripts/popup calendar"
+      :class "date-dropdown"
+      :tooltip "Press me to get the calendar")
+  )
+)
+(defpoll dateval :interval "1s" "scripts/getDate")
+
+;; Calendar ;;
+(defwidget cal []
+    (box :class "cal-box"
+          :orientation "v"
+      (box :class "cal-inner-box"
+        (calendar :class "cal"
+              :day calendar_day
+              :month calendar_month
+              :year calendar_year
+        )
+      )
+    )
+)
+
+(defpoll calendar_day :interval "10h" "date '+%d'")
+(defpoll calendar_month :interval "10h" "scripts/calendar")
+(defpoll calendar_year :interval "10h" "date '+%Y")
+
+;; =================================================================== ;;
+
+;; Battery ;;
+(defwidget bat []
+      (box :orientation "h"	
+          :space-evenly "false"
+          :tooltip "Battery: ${battery-cappacity}%"    
+        (label :class "bat"		
+            :halign "end"		
+	    :text battery
+            :style "color: ${battery-color}"
+        )
+      )
+)
+(defpoll battery :interval "1s"	"scripts/battery icon")
+(defpoll battery-cappacity :interval "1s" "scripts/battery percent")
+(defpoll battery-color :interval "1s" "scripts/battery color")
+
+;; Wifi ;;
+(defwidget wifi []
+    (box :orientation "h"
+        :tooltip "${wifi-name} - ${wifi-stats}"
+    (button :onclick "scripts/popup wifi"
+        :class "wifi-icon" :style "color: ${wifi-color}" "${wifi-icon} ${wifi-name}")
+    )
+)
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+(defpoll wifi-stats :interval "1s" "scripts/wifi stats")
+(defpoll wifi-color :interval "1s" "scripts/wifi color")
+
+;; Volume ;;
+(defwidget volume []
+    (box :orientation "h" 	
+        :space-evenly "false"
+	:spacing "2"
+        :tooltip "Volume: ${current-volume}%"
+    (button :onclick "scripts/popup audio" :class "volume-icon" "${volume_icon}")
+    )
+)
+
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll volume_icon :interval "1s" "scripts/volume icon")
+
+;; Misc Widgets ;;	
+(defwidget control []
+	(box :orientation "h"
+		 :space-evenly false
+		 :class "control"
+(wifi)
+(bat)
+(volume)))
+
+;; ================================================================== ;;
+
+;; Right Side Widgets ;;
+(defwidget right []
+  (box :class "right-modules"
+       :space-evenly "false"
+       :halign "end"
+       :orientation "h"
+    (control)
+    (datebox)
+  )
+)
+
+;; Bar Config ;;
+(defwidget bar []
+  (box :class "bar"
+       :orientation "h"
+    (left)
+    (center)
+    (right)
+  )
+)
+
+;; Window ;;
+(defwindow bar
+   :geometry (geometry :x "0"
+                       :y "10px"
+                       :width "2540px"
+                       :height "40px"
+                       :anchor "top center")
+   :stacking "fg"
+   :hexpand "false"
+   :vexpand "false"
+   :reserve (struts :distance "0px" :side "top")
+   :windowtype "dock"
+   :wm-ignore true
+ (bar))
+
+;; Calendar ;;
+(defwindow calendar
+  :geometry (geometry :x "-15px"
+                      :y "85px"
+                      :width "270px"
+                      :height "60px"
+                      :anchor "top right"
+            )
+  (cal)
+)

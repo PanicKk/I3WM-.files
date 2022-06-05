@@ -14,8 +14,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 #Auto Start Programs
-exec --no-startup-id sh ~/.config/polybar/launch.sh 
-#exec --no-startup-id sh ~/custom-scripts/ewwbar.sh
+# exec --no-startup-id sh ~/.config/polybar/launch.sh 
+exec --no-startup-id sh ~/custom-scripts/eww_openbar2.sh
 #exec --no-startup-id sh ~/custom-scripts/randomwallset.sh
 exec --no-startup-id sh ~/custom-scripts/pulseaudiofix.sh
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
@@ -174,7 +174,7 @@ bindsym $mod+r mode "resize"
 
 # window colors
 #                        border    bg     txt  indicator
-client.focused          #0095ff #0095ff #0095ff #0095ff
+client.focused          #70a5eb #70a5eb #70a5eb #70a5eb
 client.focused_inactive #b6beca #22262e #ffffff #22262e
 client.unfocused        #b6beca #22262e #ffffff #22262e
 client.urgent           #e05f65 #171a1f #ffffff #e05f65
@@ -199,7 +199,7 @@ bindsym $mod+b exec --no-startup-id sh ~/.config/rofi/scripts/backlight.sh
 bindsym $mod+v exec --no-startup-id sh ~/.config/rofi/scripts/volume.sh
 bindsym $mod+l exec --no-startup-id sh ~/.config/rofi/scripts/i3layoutmenu.sh
 bindsym $mod+w exec --no-startup-id feh /home/panickk/Wallpapers/ --bg-fill -z
-bindsym $mod+Shift+B exec --no-startup-id sh ~/custom-scripts/eww_openbar.sh
+# bindsym $mod+Shift+B exec --no-startup-id sh ~/custom-scripts/eww_openbar.sh
 bindsym $mod+Shift+D exec --no-startup-id sh ~/custom-scripts/eww_opendashboard.sh
 bindsym $mod+Shift+S exec --no-startup-id sh ~/custom-scripts/eww_opensidecard.sh
 bindsym $mod+Shift+K exec --no-startup-id sh ~/custom-scripts/eww_openRandomJPW.sh

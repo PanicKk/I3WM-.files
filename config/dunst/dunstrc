@@ -7,13 +7,13 @@
   
   width = 275
   height = 100
-  offset = 16x85
+  offset = 18x100
   origin = top-right
 
   frame_width = 5
   progress_bar_frame_width = 0;
   separator_height = 0
-  frame_color = "#0095ff"
+  frame_color = "#70a5eb"
   separator_color = "#22262e"
 
   sort = no

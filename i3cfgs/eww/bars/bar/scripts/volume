@@ -1,0 +1,39 @@
+#!/bin/sh
+
+per="$(amixer -D pulse sget Master | grep 'Left:' |awk -F'[][]' '{ print $2 }' | tr -d '%')"
+isMuted="$(pamixer --get-mute)"
+
+icon() {
+
+if [ "$isMuted" = true ]; then
+  icon=""
+else  
+  if [ "$per" -gt "80" ]; then
+    icon=""
+  elif [ "$per" -gt "50" ]; then
+    icon=""
+  elif [ "$per" -gt "40" ]; then
+    icon=""
+  elif [ "$per" -gt "30" ]; then
+    icon=""
+  elif [ "$per" -gt "20" ]; then
+    icon=""
+  elif [ "$per" -gt "10" ]; then
+    icon=""
+  elif [ "$per" -gt "0" ]; then
+    icon=""
+  else
+      echo  && exit
+  fi
+fi
+echo "$icon"
+}
+
+percent() {
+echo $per
+}
+
+[ "$1" = "icon" ] && icon && exit
+[ "$1" = "percent" ] && percent && exit
+exit
+

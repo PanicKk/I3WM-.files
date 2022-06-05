@@ -1,0 +1,67 @@
+May 24 22:10 : config: option 'buffer_time' on line 23 was not recognized
+May 24 22:10 : config: option 'max_client' on line 38 was not recognized
+May 24 22:10 : update: added /Buta - Rich.mp4
+May 24 22:10 : update: added /DON XHONI - CRYPTO.mp3
+[src/libmpg123/parse.c:skip_junk():1276] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+May 24 22:10 : mpg123: mpg123_getformat() failed: A generic mpg123 error.
+May 24 22:10 : update: added /AC Valhalla song(My Mother Told Me).mp3
+May 24 22:10 : update: added /Sedat Rama - Vallah.mp3
+May 24 22:21 : config: option 'buffer_time' on line 23 was not recognized
+May 24 22:21 : config: option 'max_client' on line 38 was not recognized
+May 24 22:26 : config: option 'buffer_time' on line 23 was not recognized
+May 24 22:26 : config: option 'max_client' on line 38 was not recognized
+May 25 00:00 : config: option 'buffer_time' on line 23 was not recognized
+May 25 00:00 : config: option 'max_client' on line 38 was not recognized
+May 25 00:07 : config: option 'buffer_time' on line 23 was not recognized
+May 25 00:07 : config: option 'max_client' on line 38 was not recognized
+May 25 00:08 : server_socket: bind to '0.0.0.0:8000' failed (continuing anyway, because binding to '[::]:8000' succeeded): Failed to bind socket: Address already in use
+May 25 00:08 : player: played "Sedat Rama - Vallah.mp3"
+May 25 00:19 : config: option 'buffer_time' on line 23 was not recognized
+May 25 00:19 : config: option 'max_client' on line 38 was not recognized
+May 25 00:19 : server_socket: bind to '0.0.0.0:8000' failed (continuing anyway, because binding to '[::]:8000' succeeded): Failed to bind socket: Address already in use
+May 25 00:19 : player: played "Sedat Rama - Vallah.mp3"
+May 25 00:23 : config: option 'buffer_time' on line 23 was not recognized
+May 25 00:23 : config: option 'max_client' on line 38 was not recognized
+May 25 00:26 : server_socket: bind to '0.0.0.0:8000' failed (continuing anyway, because binding to '[::]:8000' succeeded): Failed to bind socket: Address already in use
+May 25 00:26 : exception: Failed to open "ALSA [Bit-perfect]" (alsa); Failed to open ALSA device "hw:1,0": Device or resource busy
+May 25 00:26 : player: played "DON XHONI - CRYPTO.mp3"
+May 25 00:31 : config: option 'buffer_time' on line 23 was not recognized
+May 25 00:31 : config: option 'max_client' on line 38 was not recognized
+May 25 00:32 : server_socket: bind to '0.0.0.0:8000' failed (continuing anyway, because binding to '[::]:8000' succeeded): Failed to bind socket: Address already in use
+May 25 00:32 : player: played "AC Valhalla song(My Mother Told Me).mp3"
+May 25 00:32 : player: played "AC Valhalla song(My Mother Told Me).mp3"
+May 25 00:32 : player: played "AC Valhalla song(My Mother Told Me).mp3"
+May 25 00:33 : player: played "Buta - Rich.mp4"
+May 25 00:36 : config: option 'buffer_time' on line 23 was not recognized
+May 25 00:36 : config: option 'max_client' on line 38 was not recognized
+May 25 00:38 : update: removing AC Valhalla song(My Mother Told Me).mp3
+May 25 00:38 : update: updating /Buta - Rich.mp4
+May 25 00:38 : update: added /AC Valhalla song(My Mother Told Me)y.mp3
+May 25 00:38 : update: updating /DON XHONI - CRYPTO.mp3
+May 25 00:38 : update: updating /Sedat Rama - Vallah.mp3
+May 25 00:40 : server_socket: bind to '0.0.0.0:8000' failed (continuing anyway, because binding to '[::]:8000' succeeded): Failed to bind socket: Address already in use
+May 25 01:26 : alsa_output: Decoder is too slow; playing silence to avoid xrun
+May 25 01:26 : player: played "DON XHONI - CRYPTO.mp3"
+WARNING: Unhandled message: interface=org.freedesktop.DBus, path=/org/freedesktop/DBus, member=ActivatableServicesChanged
+WARNING: Unhandled message: interface=org.freedesktop.DBus, path=/org/freedesktop/DBus, member=ActivatableServicesChanged
+WARNING: Unhandled message: interface=org.freedesktop.DBus, path=/org/freedesktop/DBus, member=ActivatableServicesChanged
+May 25 01:30 : alsa_output: Decoder is too slow; playing silence to avoid xrun
+May 25 01:30 : player: played "DON XHONI - CRYPTO.mp3"
+May 25 01:34 : player: played "Sedat Rama - Vallah.mp3"
+May 25 03:27 : player: played "Sedat Rama - Vallah.mp3"
+May 25 03:27 : exception: Not playing
+May 25 03:27 : exception: Not playing
+May 25 03:27 : config: option 'buffer_time' on line 23 was not recognized
+May 25 03:27 : config: option 'max_client' on line 38 was not recognized
+May 25 03:27 : client: [0] command "currentsong" during idle
+May 25 14:59 : config: option 'buffer_time' on line 23 was not recognized
+May 25 14:59 : config: option 'max_client' on line 38 was not recognized
+May 27 22:44 : config: option 'buffer_time' on line 23 was not recognized
+May 27 22:44 : config: option 'max_client' on line 38 was not recognized
+May 27 23:16 : client: [0] command "close" during idle
+May 28 01:05 : client: [1] command "close" during idle
+May 28 01:35 : config: option 'buffer_time' on line 23 was not recognized
+May 28 01:35 : config: option 'max_client' on line 38 was not recognized
+May 28 01:35 : client: [0] command "currentsong" during idle
+May 29 16:16 : config: option 'buffer_time' on line 23 was not recognized
+May 29 16:16 : config: option 'max_client' on line 38 was not recognized

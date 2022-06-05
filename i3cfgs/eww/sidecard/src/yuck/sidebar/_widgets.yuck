@@ -1,0 +1,111 @@
+(defwidget dashboard []
+    (box :class "dashboard-box" :orientation "v" :space-evenly "false"
+        (box :class "first-row" :orientation "h"
+            (box :class "column-one" :orientation "v" :space-evenly "false"
+                (box :class "avatar" :orientation "h"
+                    (box :class "avatar-image")
+                )
+            )
+            (box :class "column-two" :orientation "v" :space-evenly "false"
+                (box :class "weather" :orientation "v" :space-evenly "false"
+                    (box :orientation "h" :space-evenly "false" 
+                        (label :class "weather-desc" :text "${weather_desc}")
+                    )
+                    (label :class "weather-temp" :text "${weather_temp}°C")
+                )
+                (box :class "date" :orientation "v" :space-evenly "false"
+                    (box :orientation "h" :space-evenly "false"
+                        (label :class "weekday" :text "${weekday}")
+                    )
+                    (label :class "monthday" :text "${monthday}")
+                )
+            )
+        )
+        (box :class "second-row" :orientation "h"  :space-evenly "false"
+            (box :class "music-player" :orientation "h" :space-evenly "false"
+                (box :class "song-art" :style "background-image: url('${art}')" :tooltip "${song_artist} - ${song_title_full}" song_art
+                    (box :class "music-info" :orientation "v" :space-evenly "false"
+                        (box :class "np" :orientation "h" :space-evenly "false"
+                            (label :class "now-playing" :text player_status_text)
+                        )
+                        (box :class "title" :orientation "h" :space-evenly "false"
+                            (label :class "song-title" :limit-width 40 :text song_title)
+                        )
+                        (box :class "artist" :orientation "h" :space-evenly "false"
+                            (label :class "song-artist" :text song_artist)
+                        )
+                        (box :class "position" :orientation "h" :space-evenly "false"
+                            (label :class "song-position" :text song_position)
+                        )
+                    )
+                  )                
+                (box :class "song-controls" :orientation "v"
+                    (button :onclick "mpc -q next" "")
+                    (button :class "play-pause" :onclick "mpc -q toggle" player_status)
+                    (button :onclick "mpc -q prev" "")
+                )
+            )
+        )
+        (box :class "third-row" :orientation "h" :space-evenly "false"
+            
+            (box :class "system-info-scale" :orientation "h" :space-evenly "false"
+                (box :class "ram" :orientation "v"  :space-evenly "false"
+                    (label :class "ram-usage" :text "RAM")
+                    (circular-progress :class "ram-progress"
+                        :value used_ram
+                        :thickness 15
+                        :clockwise "true"
+                        :tooltip "Used RAM: ${used_ram}%" 
+                        (label :class "ram-icon" :text "")
+                    )
+                )
+            )
+            (box :class "system-info" :orientation "h" :space-evenly "false"
+                (box :class "volume" :orientation "v" :space-evenly "false"
+                    (label :class "volume-icon" :text "")
+                    (scale :min 0
+                        :max 101
+                        :value volume
+                        :orientation "v"
+                        :flipped true
+                        :tooltip "Volume: ${volume}%"
+                        :onchange "amixer -D pulse sset Master {}%"
+                        :class "volbar"
+                    )
+                )
+                (box :class "brightness" :orientation "v" :space-evenly "false"
+                    (label :class "brightness-icon" :text "")
+                    (scale :min 0
+                        :max 101
+                        :value brightness
+                        :orientation "v"
+                        :flipped true
+                        :tooltip "Brightness: ${brightness}%"
+                        :onchange "brightnessctl set {}%"
+                        :class "bribar"
+                    )
+                )
+                (box :class "mic" :orientation "v" :space-evenly "false"
+                    (label :class "mic-icon" :text "")
+                    (scale :min 0
+                        :max 101
+                        :value micro
+                        :orientation "v"
+                        :flipped true
+                        :tooltip "Microphone Volume: ${micro}%"
+                        :onchange "amixer -D pulse sset Capture {}%"
+                        :class "micbar"
+                    )
+                )
+            )
+        )
+        (box :class "fourth-row" :orientation "h"
+            (box :class "system-btn" :orientation "h" :space-evenly "true"
+                (button :class "network-btn" :style "background-color: ${network-color}" :onclick "scripts/popup wifi" "")
+                (button :class "lock-btn" :onclick "sh ~/custom-scripts/i3lock.sh" "")
+                (button :class "reboot-btn" :onclick "systemctl reboot" "")
+                (button :class "shutdown-btn" :onclick "systemctl poweroff" "")
+            )
+        )
+    )
+)

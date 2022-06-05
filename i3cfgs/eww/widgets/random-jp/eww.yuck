@@ -1,0 +1,33 @@
+(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/widgets/random-jp")
+
+(defwidget random-jpw []
+  (box :class "box" :orientation "v" :space-evenly "true"
+    (box :class "first-row" :orientation "h"
+      (label :class "random-jp-en" :text "English: ${random_jp_en}")
+    )
+    (box :class "second-row" :orientation "h"
+      (label :class "random-jp-kanji" :text "Kanji: ${random_jp_kanji}")
+    )
+  )
+)
+
+;; Variables
+(defpoll random_jp_en :interval "5m"
+  "./scripts/echoRandomJP en"
+)
+(defpoll random_jp_kanji :interval "5m"
+  "./scripts/echoRandomJP kanji"
+)
+
+;; Window
+(defwindow random-jpw
+  :geometry (geometry :x "-15px"
+                      :y "-30px"
+                      :width "500px"
+                      :height "300px"
+                      :anchor "bottom right"
+  )
+  (random-jpw)
+)
+
+

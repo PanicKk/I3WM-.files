@@ -1,0 +1,360 @@
+;; put path to aesthetic bar config files here ;;
+(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Custom Widgets (dashboard) ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Profile Widget ;;
+(defwidget profile []
+  (box :orientation "v"
+        :space-evenly "false"
+        :class "profile-box"
+        (image :path "images/profile.jpg" :image-width 200 :image-height 200 :class "profile-picture")
+        (box :orientation "v" :space-evenly "false" :class "profile-info"
+        (label :text "PanicKk" :class "profile-name")
+        (label :text "@PanicKk" :class "profile-username")))
+)
+
+
+;; Time Widget ;;
+(defwidget wtime[]
+  (box :orientation "h" :space-evenly "false" :class "time-box"
+  (label :text {wtime} :class "time-text")
+  ;(label :text {minute} :class "minute-text")
+  )
+)
+
+
+;; Date Widget ;;
+(defwidget date [] 
+  (box :orientation "v" :space-evenly "false" :class "date-box"
+  (label :text {date} :class "date-text" :limit-width 60))
+)
+
+
+;; Clock Widget ;;
+(defwidget wlock []
+  (button :onclick "sh ~/custom-scripts/i3lock.sh"
+  (box :orientation "v" :space-evenly "false" :class "square-button"
+    (box :class "logout" "")))
+)
+
+;; Powermenu-controls Widgets ;;
+(defwidget wrestart []
+  (button :onclick "i3-msg restart"
+  (box :orientation "v" :space-evenly "false" :class "square-button"
+    (box :class "restart" "")))
+)
+
+
+(defwidget wreboot []
+  (button :onlick "systemctl reboot"
+    (box :orientation "v" :space-evenly "false" :class "square-button"
+      (box :class "reboot" "")))
+)
+
+(defwidget wpoweroff []
+  (button :onclick "poweroff"
+    (box :orientation "v" :space-evenly "false" :class "square-button"
+      (box :class "poweroff" "")))
+)
+
+
+;; Music Widget ;;
+(defwidget music []
+    (box :orientation "h" :space-evenly "false" :class "music-box"
+      (button :onclick "urxvt -name 'music_player' -e ncmpcpp_art"
+        (image :path "./images/music.png" :image-width 100 :image-height 100 :class "music-album"))
+    (box :orientation "v" :space-evenly "false" :class ""
+      (box :orientation "height" :space-evenly "false" :class ""
+        (label :text {song} :class "music-info" :limit-width 20))
+     (box :orientation "h" :space-evenly "false" :class "music-control-box"
+       (button :onclick "mpc prev"
+         (label :text "" :class "music-control" :limit-width 24))
+           (button :onclick "mpc toggle"
+             (label :text {mcontrol} :class "music-control" :limit-width 24))
+           (button :onclick "mpc next"
+             (label :text "" :class "music-control" :limit-width 24))
+      )
+    )
+))
+
+
+;; Variables for custom Widgets ;;
+(defpoll wtime :interval "1s" "date '+%H:%M'")
+(defpoll date :interval "1s" "date '+%d/%m/%Y'")
+(defpoll song :interval "500ms"  "./scripts/music_info.sh")
+(defpoll mcontrol :interval "250ms"  "./scripts/play_pause_control.sh")
+(defpoll album :interval "1s"  "./scripts/album_art.py")
+
+
+;; Widget Windows ;;
+(defwindow profile
+  :geometry (geometry :x 100 :y 60 :width "250px" :height "375px")
+  (profile)
+)
+
+(defwindow wtime
+  :geometry (geometry :x 360 :y 170 :width "200px" :height "100px")
+  (wtime)
+)
+
+(defwindow date
+  :geometry (geometry :x 360 :y 60 :width "200px" :height "100px")
+  (date)
+)
+
+(defwindow wlock 
+  :geometry (geometry :x 362 :y 280 :width "90px" :height "50px")
+  (wlock)
+)
+
+(defwindow wrestart 
+  :geometry (geometry :x 467 :y 280 :width "90px" :height "50px")
+  (wrestart)
+)
+
+
+(defwindow wreboot 
+  :geometry (geometry :x 362 :y 363 :width "90px" :height "50px")
+  (wreboot)
+)
+
+(defwindow wpoweroff 
+  :geometry (geometry :x 467 :y 363 :width "90px" :height "50px")
+  (wpoweroff)
+)
+
+(defwindow music 
+  :geometry (geometry :x "90px" :y "435px" :width "475px" :height "180px")
+  (music)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Bar Widget Section's ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Launcher Widgets ;;
+(defwidget launcher []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :spacing -15
+  	(button :class "launcher_icon"
+		   	:onclick "scripts/popup launcher"  "")))
+
+;; Workspaces Widgets ;;
+(defwidget workspaces []
+	(literal :content workspace))
+(deflisten workspace "scripts/workspace")
+
+;; Battery Widgets ;;
+(defwidget bat []
+	(box	:orientation "v"	
+			:space-evenly "false"
+	(label	:class "bat"		
+			:halign "end"		
+			:text battery	
+			:tooltip "Battery: ${battery-cappacity}%")))
+(defpoll battery			:interval "1s"	"scripts/battery icon")
+(defpoll battery-cappacity	:interval "1s"	"scripts/battery percent")
+
+;; Wifi Widgets ;;
+(defwidget wifi []
+	(box		:orientation "v"  
+				:tooltip "${wifi-name} - ${wifi-stats}"
+	(button		:onclick "scripts/popup wifi" 
+				:class "wifi-icon" wifi-icon)))
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+(defpoll wifi-stats :interval "1s" "scripts/wifi stats")
+
+;; Brightness Widgets ;;
+(defwidget bright []
+  (eventbox :onhover "${eww} update bright=true"   
+  			:onhoverlost "${eww} update bright=false"
+  			(box    :orientation "v"  
+			  		:space-evenly "false"  
+					:spacing 2
+  			(revealer :transition "slideup" 
+			  		  :reveal bright   
+					  :duration "550ms"
+  			(scale :class "bribar" 
+			  	   :value current-brightness 
+				   :tooltip "Brightness: ${current-brightness}%" 
+				   :onchange "brightnessctl set {}%" 
+				   :orientation "v" 
+				   :flipped true 
+				   :max 101 
+				   :min 0))
+  			(label :class "brightness-icon" 
+			  	   :text ""))))
+(defpoll current-brightness :interval "1s" "brightnessctl -m -d nvidia_0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defvar bright false)
+
+;; Volume Widgets ;;
+(defwidget volum []
+	(eventbox :onhover "${eww} update volum=true" 		
+			  :onhoverlost "${eww} update volum=false"
+	(box      :orientation "v" 	  
+			  :space-evenly "false" 
+			  :spacing "2"
+	(revealer :transition "slideup" 
+			  :reveal volum         
+			  :duration "550ms"
+	(scale    :class "volbar" 	  
+			  :value current-volume 
+			  :orientation "v"      
+			  :flipped true 
+			  :text volume_icon
+                          :tooltip "Volume: ${current-volume}%" 
+			  :max 101 
+			  :min 0 
+			  :onchange "amixer -D pulse set Master {}%" ))
+	(button   :onclick "scripts/popup audio"   :class "volume-icon" "${volume_icon}"))))
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll volume_icon :interval "1s" "scripts/volume icon")
+(defvar volum false)
+
+;; Control Panel Widgets ;;	
+(defwidget control []
+	(box :orientation "v" 
+		 :space-evenly false  
+		 :class "control"
+(bat)
+(wifi)
+(volum)))
+
+;; Clock Widgets ;;
+(defwidget time []
+	(box	:orientation "v" 
+			:class "time" 
+			:valign "end"
+	(button	:onclick "scripts/popup calendar"	
+			:class "time-hour" hour)
+	(button	:onclick "scripts/popup calendar"	
+			:class "time-min"  min)))
+(defpoll hour	:interval "1s"	"date '+%H'")
+(defpoll min	:interval "1s"	"date '+%M'")
+
+;; Calendar Widgets ;;
+(defwidget cal []
+	(box :class "cal-box" 
+		 :orientation "v"
+	(box :class "cal-inner-box"
+	(calendar :class "cal" 
+			  :day calendar_day 
+			  :month calendar_month 
+			  :year calendar_year))))
+(defpoll calendar_day :interval "10h"
+    "date '+%d'")
+(defpoll calendar_month :interval "10h"
+    "scripts/calendar")
+(defpoll calendar_year :interval "10h"
+    "date '+%Y'")
+
+;; Powermenu Widgets ;;
+(defwidget power []
+	(eventbox	:onhover "${eww} update power=true"	
+				:onhoverlost "${eww} update power=false" 
+	(box		:orientation "v"					
+				:space-evenly "false" 	 
+				:vexpand "false" 	
+				:class "powermenu"
+	(revealer	:transition "slideup"				
+				:reveal power			 
+				:duration "550ms"
+	(box		:orientation "v"					
+				:space-evenly "false"
+
+	(button   	:class "button-i3res"  			
+				:tooltip "i3WM Restart" 
+				:onclick "i3-msg restart" "" )
+
+  	(button		:class "button-reb"					
+	  			:tooltip "Reboot"		 
+				:onclick "reboot"	"")
+
+	(button		:class "button-quit" 				
+				:tooltip "Logout" 		 
+				:onclick "i3-msg exit" "")
+
+	(button		:class "button-lock" 				
+				:tooltip "Lock Screen"	 
+				:onclick "~/custom-scripts/i3lock.sh"	"")))
+
+	(button		:class "button-off"					
+				:tooltip "Shutdown"		 
+				:onclick "systemctl poweroff"	""))))
+(defvar power false)
+
+;; Top Widgets ;;
+(defwidget top []
+	(box	:orientation "v" 
+			:space-evenly "false" 
+			:valign "start" 
+(launcher)
+(workspaces)))
+
+;; Center Widgets ;;
+(defwidget center []
+        (box    :orientation "v"
+                    :space-evenly false
+(time)))
+
+;; Bottom Widgets ;;
+(defwidget bottom []
+	(box	:orientation "v" 
+		    :space-evenly false 
+(power)))
+
+;; End Widgets ;;
+(defwidget end []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :valign "end" 
+		 :spacing 5
+(control)
+(bottom)))
+
+;; Bar Widgets ;;
+(defwidget bar []
+	(box :class "eww_bar" 
+		 :orientation "v" 
+		 :vexpand "false" 
+		 :hexpand "false"
+(top)
+(center)
+(end)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Bar Window Section's ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Bar Windows ;;
+(defwindow bar
+	:geometry (geometry :x "0" 
+						:y "0" 
+						:height "1600px" 
+						:width "30px"
+                                                :anchor "center left")
+	:monitor 0
+	:reserve (struts :distance "30px" 
+					 :side "left")
+	:wm-ignore true
+	:hexpand "false"
+	:vexpand "false"
+        :windowtype "toolbar"
+        :stacking "bg"
+(bar))
+
+;; Calendar Windows ;;
+(defwindow calendar
+	:geometry (geometry :x "100px" 
+						:y "32%" 
+						:width "270px" 
+						:height "60px")
+(cal))
+
+
+
+
+

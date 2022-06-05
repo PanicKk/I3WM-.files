@@ -1,0 +1,290 @@
+// Global
+*{
+  all: unset;
+}
+
+// Variable Color's
+$background: #171a1f;
+$foreground: #A9B1D6;
+
+$black: #22262e;
+$gray: #b6beca;
+$red: #e05f65;
+$green: #78dba9;
+$yellow: #f1cf8a;
+$blue: #70a5eb;
+$magenta: #c68aee;
+$cyan: #74bee9;
+$white: $foreground;
+
+// EWW BAR
+.eww_bar{
+  background-color: $background;
+  padding: .3rem;
+}
+
+// Launcher
+.launcher_icon{
+    color: $blue;
+    font-family: "Font Awesome 6 Free";
+    font-size: 30px;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+// Workspaces
+.works {
+font-family: "Font Awesome 6 Free";
+padding: .5rem .4rem .5rem .4rem;
+background-color: $black;
+border-radius: 5px;
+font-size: 25px;
+}
+
+.unoccupied {
+  color: #a9b1d6;
+
+}
+.occupied {
+  color: #dee1e6;
+
+}
+.focused {
+  color: #0095ff;
+}
+.urgent {
+  color: #e05f65;
+}
+
+// Control Panel
+.control {
+padding: .5rem;
+font-family: "Font Awesome 6 Free";
+font-size: 25px;
+background-color: $black;
+border-radius: 5px;
+}
+
+// Battery icon
+.bat{
+  font-family: "Font Awesome 6 Free";
+  font-size: 21px;
+  margin: .25rem 0 .25rem 0rem;
+  color: $green;
+}
+
+// Wifi icon
+.wifi-icon{
+  font-family: "Font Awesome 6 Free";
+  font-size: 20px;
+  margin: .25rem 0 .25rem 0;
+  color: $cyan;
+}
+
+// Brightness icon
+.brightness-icon{
+  font-family: "Font Awesome 6 Free";
+  font-size: 20px;
+  margin: .25rem 0 .25rem 0;
+  color: $yellow;
+}
+
+// Volume icon
+.volume-icon{
+  font-family: "Font Awesome 6 Free";
+  font-size: 18px;
+  margin: .25rem 0 .25rem .1rem;
+  color: $blue;
+}
+
+
+// Brightness bar
+.bribar trough highlight {
+  background-color: $yellow;
+  border-radius: 5px;
+}
+
+// Volume bar
+.volbar trough highlight {
+  background-color: $green;
+  border-radius: 5px;
+}
+
+// Clock
+.time {
+  font-family: Comic Mono;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: $black;
+  color: $cyan;
+  border-radius: 5px;
+  padding: .7rem 0 .5rem 0;
+  margin: 175px 0 0 0;
+}
+
+// Calendar
+.cal-box {
+  background-color: $background;
+  font-family: Comic Mono;
+  font-size: 25px;
+  font-weight: bold;
+  border: solid 4px $blue; 
+  border-radius: 15px;
+
+  .cal-inner-box {
+      padding: 1rem 1rem .2rem;
+
+      .cal {
+          &.highlight {
+              padding: 10rem;
+          }
+
+          padding: .8rem .25rem 0rem;
+          margin-left: 10px;
+      }
+  }
+}
+
+calendar:selected {
+  color: $green;
+}
+
+calendar.header {
+color: $magenta;
+font-weight: bold;
+}
+
+calendar.button {
+color: $red;
+}
+
+calendar.highlight {
+color: $cyan;
+font-weight: bold;
+}
+
+calendar:indeterminate {
+color: $background;
+}
+
+// Powermenu
+.powermenu {
+  font-family: "Font Awesome 6 Free";
+  font-size: 25px;
+  font-weight: bold;
+}
+.button-i3res, .button-reb, .button-lock,
+.button-quit, .button-off{
+  padding: .5rem .2rem .3rem .2rem;
+}
+.button-off{
+  margin-bottom: .5rem;
+  color: $red;
+}
+.button-i3res{
+  color: $green;
+}
+.button-reb{
+  color: $yellow
+}
+.button-quit{
+  color: $magenta;
+}
+.button-lock{
+  color: $blue;
+}
+
+//------------------------------ Widgets ------------------------------
+
+.profile-box, .time-box, .date-box, .square-button, .music-box {
+  background-color: $background;
+  border-radius: 10px;
+}
+
+
+.profile-picture {
+  margin: 35px 0 10px 10px;
+}
+
+.profile-info {
+  margin: 15px 10px 25px 10px;
+}
+
+.profile-name {
+  font-family: "Fredoka";
+  font-size: 25px;
+}
+
+.profile-username {
+  font-family: "Fredoka";
+  font-size: 20px;
+  color: $red;
+}
+
+.time-text {
+  font-family: "Fredoka";
+  font-size: 50px;
+  margin: 10px 20px 10px 40px;
+  color: $blue;
+}
+
+
+.date-text {
+  font-family: "Fredoka";
+  font-size: 30px;
+  margin: 30px 0 0 0;
+  color: #da717f;
+}
+
+.square-button {
+  font-family: "Fredoka";
+  padding: 17px;
+  font-size: 30px;
+  background-color: $background;
+}
+
+.poweroff {
+  color: #e05f65;
+}
+
+.reboot {
+  color: #f1cf8a;
+}
+
+.lock {
+  color: #70a5eb;
+}
+
+.restart {
+  color: #74bee9;
+}
+
+.music-box {
+  margin: 10px;
+  color: #b77bdf;
+}
+
+.music-icon {
+  font-family: "Font Awesome 6 Free";
+  margin: 10px;
+  font-size: 50px;
+}
+.music-info {
+  font-family: "Fredoka";
+  margin: 10px;
+  font-size: 35px;
+}
+
+.music-control-box {
+  margin: 5px 0 0 80px;
+}
+
+.music-control {
+  font-family: "Font Awesome 6 Free";
+  font-size: 30px;
+  margin: 10px;
+}
+
+.music-album {
+  border-radius: 10px;
+  margin: 0 10px 0 30px;
+}

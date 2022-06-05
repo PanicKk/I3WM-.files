@@ -1,19 +1,75 @@
-## Import files (Colors,Etc)
-import:
-  - ~/.config/alacritty/night/decay.yml
+schemes:
+  decay_dark: &dark
+    primary:
+      background: '#171a1f'
+      foreground: '#a9b1d6'
 
-## Set environment variables
+    cursor:
+      text:   CellForeground
+      cursor: '#f5f5f5'
+
+    normal:
+      black:   '#1C252C'
+      red:     '#e05f65'
+      green:   '#78dba9'
+      yellow:  '#f1cf8a'
+      blue:    '#70a5eb'
+      magenta: '#c68aee'
+      cyan:    '#74bee9'
+      white:   '#dee1e6'
+
+    bright:
+      black:   '#384148'
+      red:     '#fc7b81'
+      green:   '#94f7c5'
+      yellow:  '#ffeba6'
+      blue:    '#8cc1ff'
+      magenta: '#e2a6ff'
+      cyan:    '#90daff'
+      white:   '#fafdff'
+
+  decay_light: &light
+    primary:
+      background: '#b8c0e5'
+      foreground: '#171a1f'
+
+    cursor:
+      text:   CellForeground
+      cursor: '#171a1f'
+
+    normal:
+      black:   '#1c252c'
+      red:     '#e05f65'
+      green:   '#78dba9'
+      yellow:  '#f1cf8a'
+      blue:    '#70a5eb'
+      magenta: '#c68aee'
+      cyan:    '#74bee9'
+      white:   '#dee1e6'
+
+    bright:
+      black:   '#384148'
+      red:     '#fc7b81'
+      green:   '#94f7c5'
+      yellow:  '#ffeba6'
+      blue:    '#8cc1ff'
+      magenta: '#e2a6ff'
+      cyan:    '#90daff'
+      white:   '#fafdff'
+
+colors:
+  *dark
+
 env:
   TERM: xterm-256color
 
-## Terminal window settings
 window:
-  opacity: 1.0
+  dynamic_padding: true
+
   padding:
     x: 25
     y: 25
 
-## Font
 font:
   normal:
     family: Iosevka Semibold Extended
@@ -37,45 +93,7 @@ font:
     x: 0
     y: 0
 
-  glyph_offset:
-    x: 0
-    y: 0
-
-# Class
-class:
-  instance: Alacritty
-  general: Alacritty
-
-# Scrolling
-scrolling:
-  history: 10000
-  multiplier: 3
-
-# Visual
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0.5
-  color: "#ffffff"
-
-# Selection
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-  save_to_clipboard: true
-
-# Cursor
 cursor:
-  style: 'Beam'
+  style: Underline
 
-# Shell
-shell:
-  program: /usr/bin/zsh
-
-# Mouse
-mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-  hide_when_typing: true
-
-# Global Configuration
 live_config_reload: true
-draw_bold_text_with_bright_colors: true

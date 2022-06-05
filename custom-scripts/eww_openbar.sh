@@ -4,5 +4,5 @@
 EWW="$HOME/.local/bin/eww"
 DIR="$HOME/.config/eww/bar"
 
-## Run eww daemon if not running already
+## Toggle Bar - on/off
 i3-msg restart | ${EWW} -c ${DIR} open --toggle bar

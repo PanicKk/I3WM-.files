@@ -1,0 +1,96 @@
+.dashboard-box {
+    .third-row {
+        margin-top: 1em;
+        margin-left: 0em;
+
+        .system-info {
+            
+            scale trough {
+                background-color: $bgSecondary;
+                border-radius: 10px;
+                min-height: 12em;
+                min-width: 2.5em;
+            }
+
+            .volume-icon {
+                margin: 0rem 1rem 0rem;
+                padding: .35em;
+                border-radius: 2em;
+                color: #6e7071;
+                font-size: 46px;
+            }
+
+            .volume {
+                margin: 0.5em 0em;
+
+                .volbar trough highlight {
+                    background-image: linear-gradient(to top, $blue-desaturated, $blue);
+                    border-radius: 8px;
+                }
+            }
+
+            .brightness {
+                margin: 1.25em 0rem -1em .2em;
+
+                .brightness-icon {
+                    margin: 0rem 1rem .8rem;
+                    padding: .35em;
+                    border-radius: 2em;
+                    color: #6e7071;
+                    font-size: 28px;
+                }
+                
+                .bribar trough highlight {
+                    background-image: linear-gradient(to right, #de8f78, $yellow);
+                    border-radius: 8px;
+                }
+            }
+            .mic {
+                margin: 0.85em 0em 0.5em .6rem;
+                
+                .mic-icon {
+                  margin: 0rem 1rem .35rem;
+                  padding: .35em;
+                  border-radius: 2em;
+                  color: #6e7071;
+                  font-size: 35px;
+                }
+
+                .micbar trough highlight {
+                    background-image: linear-gradient(to right, #df5b61, $red);
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .system-info-scale {
+            margin-left: 0px;
+            margin-right: .5em;
+            
+            .ram {
+                background-color: $bgSecondary;
+                border-radius: 10px;
+                padding: 0 2em 1em;
+
+                .ram-progress {
+                    margin-bottom: 3.8rem;
+                    background-color: $bg;
+                    color: $green;
+
+                    .ram-icon {
+                        margin: .8em;
+                        font-size: 80px;
+                        font-family: "Font Awesome 6 Free";
+                        color: $green;
+                    }
+                }
+                .ram-usage {
+                    color: $fgDim;
+                    margin-top: 1em;
+                    margin-left: -8rem;
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.task{
+    background-color: $background;
+	color: $foreground;
+    border-radius: 12px;
+    padding: 1.9rem;
+    margin: .5rem;
+.task-list{
+  	margin: 0 0 0 2.5rem;
+	}
+}
+
+.appointment{
+	padding: 0 1rem 1rem 0;
+}
+.appointment-label{
+	font-family: "Fredoka Medium";
+	font-size: 1.3em;
+        padding: 0 5px 0 0;
+}
+.appointment-text,
+.appointment-text-time{
+	font-family: "Fredoka Medium";
+	font-style: italic;
+        text-decoration: underline;
+	font-size: 1.3em;
+        padding: 0 5px 0 0;
+}
+
+.task-list-box{
+	padding: 0 1rem 1rem 0;
+}
+.tasklabel{
+	font-family: "Font Awesome 6 Free";
+	font-size: 1.3em;
+}
+.tasklabel-todo,
+.tasklabel-time,
+.tasklabel-mem,
+.tasklabel-disk{
+	font-family: "Font Awesome 6 Free";
+	font-size: 1em;
+	font-weight: bold;
+}
+.todo, .uptime{
+	font-family: "Fredoka Medium";
+	font-size: 1em;
+}
+.mem-usage,
+.disk-text{
+	font-family: "Fredoka Medium";
+	font-size: 1em;
+}
+
+.powermenu{
+	margin: 1.5rem 0 0 4rem;
+	.poweroff,
+	.reboot,
+	.close{
+		font-family: "Font Awesome 6 Free";
+		font-size: 1.6em;
+		font-weight: bold;
+	}
+	.reboot{
+		font-size: 1.5em;
+	}
+	.close{
+		font-weight: normal;
+		font-size: 2.1em;
+	}
+	.lock{
+		font-family: "Font Awesome 6 Free";
+		font-size: 1.6em;
+		font-weight: bold;
+	}
+	.exit{
+		font-family: "Font Awesome 6 Free";
+		font-size: 1.8em;
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,13 @@
+#!/bin/bash
+Cover=/tmp/cover.png
+bkpCover=~/.config/eww/dashboard/assets/fallback.png
+mpddir=~/Music
+
+ffmpeg -i "$mpddir"/"$(mpc current -f %file%)" "${Cover}" -y || cp $bkpCover $Cover
+convert $Cover -gravity center +repage -alpha set -channel A \
+    -sparse-color Barycentric '%[fx:w*2/32],0 opaque  %[fx:w+0.5],0 transparent' \
+    -evaluate multiply 0.45 \
+    $Cover
+
+echo "$Cover" && exit
+# echo "$HOME/.cache/eww/spotify/cover.png"
