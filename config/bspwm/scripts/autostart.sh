@@ -16,6 +16,9 @@ xrdb -merge $HOME/.Xresources
 # notification manager
 dunst &
 
+# Discord
+./usr/share/discord/Discord
+
 # Wallpaper
 feh ~/Wallpapers -z --bg-scale
 

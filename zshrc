@@ -177,3 +177,6 @@ alias panes="sh ~/custom-scripts/panes.sh"
 
 export PF_ASCII="arch"
 
+# CS50 Aliases
+alias cc50="clang -fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -lcrypt -lcs50 -lm"
+

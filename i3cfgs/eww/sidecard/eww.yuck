@@ -1,4 +1,0 @@
-(include "./src/yuck/_variables.yuck")
-
-(include "./src/yuck/sidebar/_widgets.yuck")
-(include "./src/yuck/sidebar/_windows.yuck")

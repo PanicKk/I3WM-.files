@@ -10,9 +10,9 @@ cache_weather_city=${cache_dir}/weather-city
 cache_weather_country=${cache_dir}/weather-country
 
 ## Weather data
-KEY=""
-LAT=""
-LON=""
+KEY="89e4ab36265ccc5acc77f79a09da421e"
+LAT="42.6528629"
+LON="21.1626693"
 UNIT="metric"	# Available options : 'metric' or 'imperial'
 
 ## Make cache dir

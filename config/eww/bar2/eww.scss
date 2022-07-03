@@ -1,4 +1,9 @@
 @import "_colors";
+// @import "_colors_light";
+
+* {
+  all: unset;
+}
 
 // Main - Bar
 .bar {
@@ -6,7 +11,7 @@
   font-family: "Fredoka Medium";
   font-size: 12px;
   color: $fg;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 // Launcher
@@ -71,6 +76,7 @@
   font-size: 16px;
   background-color: $bg;
   font-family: "Font Awesome 6 Free";
+  border-radius: 7px;
 
   .0 {
     color: $black;
@@ -109,7 +115,7 @@
   background: $blue;
   margin: 7px 7px 7px 7px;
   padding: 0 6px 0 6px;
-  border-radius: 5px;
+  border-radius: 7px;
   .content {
     color: $background;
     font-size: 20px;
@@ -153,7 +159,7 @@ border-radius: 5px;
   margin: 0 5px 0 5px;
   color: $green;
   background-color: $bgSecondary;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 // Wifi icon
@@ -191,7 +197,7 @@ border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
   border: solid 5px $blue;
-  border-radius: 5px;
+  border-radius: 7px;
 
   .cal-inner-box {
     padding: 1rem 1rem 1rem;

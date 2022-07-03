@@ -1,5 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = "wifi" ]; then
-sh ~/custom-scripts/eww_opensidecard.sh && kitty -e nmtui
-fi

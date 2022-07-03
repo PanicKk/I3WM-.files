@@ -1,65 +1,82 @@
 # sxhkd config
 
-# Volume controls
+# ------------------------------------------- System Controls -------------------------------------------
+
+# Volume Up
 XF86AudioRaiseVolume
     pactl set-sink-volume @DEFAULT_SINK@ +5% && sh ~/custom-scripts/get-volume.sh volume
 
-
+# Volume Down
 XF86AudioLowerVolume
     pactl set-sink-volume @DEFAULT_SINK@ -5% && sh ~/custom-scripts/get-volume.sh volume
 
-
+# Mute
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle && sh ~/custom-scripts/get-volume.sh volume
 
-
+# Mute Mic
 XF86AudioMicMute
     pactl set-source-mute @DEFAULT_SOURCE@ toggle && sh ~/custom-scripts/get-volume.sh mic
 
-# Brightness controls
+# Brightness Up
 XF86MonBrightnessUp
     brightnessctl set 5%+ -q && dunstify "Brightness: `brightnessctl get`%" -u normal -t 1000 -h int:value:"`brightnessctl get`" -h string:synchronous:"Brightness: " --replace=555
 
+# Brightness Down
 XF86MonBrightnessDown
     brightnessctl set 5%- -q && dunstify "Brightness: `brightnessctl get`%" -u normal -t 1000 -h int:value:"`brightnessctl get`" -h string:synchronous:"Brightness: " --replace=555
 
-# Launch Terminal
+# ------------------------------------------- Launch Apps -------------------------------------------
+
+# Terminal
 super + Return
 	alacritty
 
-# Launch Applications Menu
-
+# Rofi Applications Menu
 super + d
     sh ~/.config/rofi/scripts/appsmenu.sh
 
-# Set a random wallpaper
-super + w
-    sh ~/custom-scripts/rwall.sh
-
-# Launch vscode
+# Visual Studo Code
 super + e
     code-oss
 
-# Launch nvim
+# NeoVim
 super + v
     alacritty -e nvim
 
+# ------------------------------------------ Custom Scripts ------------------------------------------
 
-# make sxhkd reload its configuration files:
+# Random Wallpaper
+super + w
+    sh ~/custom-scripts/rwall.sh
+
+# Eww Dashboard
+super + shift + d
+    sh ~/custom-scripts/eww_opendashboard.sh
+
+# Eww SideCard
+super + shift + s
+    sh ~/custom-scripts/eww_opensidecard.sh
+
+# Eww Random Japanese Word
+super + shift + k
+    sh ~/custom-scripts/eww_openRandomJPW.sh
+
+# ------------------------------------------- BSPWM Stuff -------------------------------------------
+ 
+# Reload SXHKD
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# bspwm hotkeys
-
-# quit/restart bspwm
+# Quit or Restart BSPWM
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
-# close and kill
+# Close or Kill
 super + {_,shift + }q
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
+# Switch between tiled and monocle layouts
 super + m
 	bspc desktop -l next
 
@@ -71,94 +88,91 @@ super + y
 super + g
 	bspc node -s biggest
 
-#
-# state/flags
-#
+# ------------------------------------------- Window State -------------------------------------------
 
-# set the window state
+# Set the state(layout) of the window
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# set the node flags
+# Set the flag(mode) of the window
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
+# --------------------------------------- Window/Workspace Manipulations ---------------------------------------
 
-# focus the node in the given direction
+# Focus the window in given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
+# Focus the window related to its hierarchy
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
+# Focus Cycle
 super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
-# focus the next/previous desktop in the current monitor
+# Cycle between workspaces
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
+# Focus at the previous window/workspace
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
+# Focus windows based on focus history old/new
 super + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
+# Change Workspace/Move Windows
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
+# ------------------------------------------- Preselect -------------------------------------------
 
-# preselect the direction
+# Preselect the direction where you want to open the new window
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
-# preselect the ratio
+# Preselect how large you want the new window to be
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
+# Undo Preselected Window
 super + ctrl + space
 	bspc node -p cancel
 
-# cancel the preselection for the focused desktop
+# Undo Preselected Workspace
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+# -------------------------------------- Move/Resize Windows --------------------------------------
 
-# expand a window by moving one of its side outward
+# Expand a window in the given direction
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
+# Shrink a window in the given direction
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating window
+# Move around a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Screenshots
+# ---------------------------------------------- Misc ---------------------------------------------
+
+# Screenshot
 Print
     flameshot gui
 
 
-# Lock
+# Lock Screen
 super + l
     ./home/panickk/custom-scripts/i3lock.sh
 
+# Toggle Eww Bar
+super + shift + b
+        eww -c ~/.config/eww/bar2 open --toggle bar

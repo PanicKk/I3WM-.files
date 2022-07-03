@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rofi -modi run,drun -show drun -xoffset 0 -yoffset 0 -line-padding 4 -columns 1 -width 20 -lines 10 -padding 25 -hide-scrollbar -show-icons -drun-icon-theme -theme ~/.config/rofi/themes/appsmenu.rasi

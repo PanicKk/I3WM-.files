@@ -18,13 +18,13 @@ elif [ "$per" -gt "60" ]; then
 elif [ "$per" -gt "50" ]; then
 	icon=""
 elif [ "$per" -gt "40" ]; then
-	icon=""
+	icon=""
 elif [ "$per" -gt "30" ]; then
 	icon=""
 elif [ "$per" -gt "20" ]; then
 	icon=""
 elif [ "$per" -gt "10" ]; then
-	icon=""
+	icon=""
 elif [ "$per" -gt "0" ]; then
 	icon=""
 else
@@ -38,12 +38,13 @@ echo $per
 }
 
 color(){
-if [ "$per" -gt "40" ]; then
-  echo "#f1cf8a"
-elif [ "$per" -gt "60" ]; then
+if [ "$per" -gt "70" ]; then
   echo "#78dba9"
+elif [ "$per" -gt "20" ]; then
+  echo "#f1cf8a"
+else
+  echo "#e05f65"
 fi
-echo "#e05f65"
 }
 
 [ "$1" = "icon" ] && icon && exit

@@ -1,14 +1,14 @@
-@define-color borders #22262e;
+@define-color borders #1a1e24;
 *:selected {
   color: #c5c9c8;
-  background-color: #70a5eb;
+  background-color: #76b97f;
 }
 
-@define-color borders #22262e;
+@define-color borders #1a1e24;
 window,
 dialog,
 messagedialog {
-  background: #171a1f;
+  background: #171B20;
   color: #c5c9c8;
 }
 
@@ -21,11 +21,11 @@ messagedialog box {
 }
 
 .background {
-  background: #171a1f;
+  background: #171B20;
 }
 
 headerbar {
-  background: #171a1f;
+  background: #171B20;
   padding: 6px;
 }
 headerbar box.horizontal.right > button.titlebutton:last-child {
@@ -76,7 +76,7 @@ entry {
   border-radius: 0;
 }
 entry:focus {
-  border-color: #70a5eb;
+  border-color: #76b97f;
   background: rgba(255, 255, 255, 0.1);
 }
 entry:disabled {
@@ -89,8 +89,8 @@ entry image.right {
   margin-left: 8px;
 }
 entry selection {
-  background: #70a5eb;
-  color: #22262e;
+  background: #76b97f;
+  color: #1a1e24;
 }
 
 button {
@@ -146,7 +146,7 @@ combobox button.combo arrow {
 }
 
 placessidebar {
-  background: #22262e;
+  background: #1a1e24;
 }
 placessidebar list {
   background: transparent;
@@ -177,11 +177,11 @@ popover.menu:first-child {
 }
 
 notebook stack:only-child {
-  background: #171a1f;
+  background: #171B20;
 }
 
 tabs {
-  background: #171a1f;
+  background: #171B20;
 }
 .top > tabs {
   border-bottom: 2px solid #21262e;
@@ -225,7 +225,7 @@ header tabs tab:hover:not(:checked) {
 }
 
 header tabs {
-  background: #22262e;
+  background: #1a1e24;
 }
 
 dialog header tabs > tab > label {
@@ -238,7 +238,7 @@ treeview {
   -GtkTreeView-tree-line-pattern: "";
   -GtkTreeView-horizontal-separator: 8;
   -GtkTreeView-vertical-separator: 8;
-  background: #22262e;
+  background: #1a1e24;
   border-left-color: #21262e;
   border-top-color: #21262e;
 }
@@ -246,7 +246,7 @@ treeview:hover {
   background: #20252d;
 }
 treeview:selected {
-  background: #70a5eb;
+  background: #76b97f;
   color: #102012;
 }
 treeview.separator {
@@ -255,7 +255,7 @@ treeview.separator {
 }
 treeview header button {
   border-bottom: 1px solid #21262e;
-  background: #22262e;
+  background: #1a1e24;
 }
 treeview header button:hover {
   background: #21262e;
@@ -391,7 +391,7 @@ toolbar.osd {
 }
 
 frame.app-notification border {
-  background: #22262e;
+  background: #1a1e24;
   border: 0;
 }
 frame > border {
@@ -399,7 +399,7 @@ frame > border {
 }
 
 .frame {
-  border: 1px solid #22262e;
+  border: 1px solid #1a1e24;
 }
 
 scrolledwindow viewport.frame {
@@ -407,7 +407,7 @@ scrolledwindow viewport.frame {
 }
 
 list {
-  background: #22262e;
+  background: #1a1e24;
 }
 list row {
   padding: 6px;
@@ -525,7 +525,7 @@ menubar menuitem {
   padding: 5px;
 }
 menubar menuitem:hover {
-  background: #22262e;
+  background: #1a1e24;
 }
 
 menu {
@@ -536,7 +536,7 @@ menu menuitem {
   padding: 8px;
 }
 menu menuitem:hover {
-  background: #22262e;
+  background: #1a1e24;
 }
 
 scrollbar {
@@ -570,7 +570,7 @@ label.dim-label, label:disabled {
 
 calendar {
   border: 1px solid #21262e;
-  background: #22262e;
+  background: #1a1e24;
 }
 calendar.button {
   background: #21262e;
@@ -597,16 +597,16 @@ calendar:indeterminate {
 }
 
 actionbar {
-  background: #22262e;
+  background: #1a1e24;
   border-top: 1px solid #21262e;
 }
 
 iconview {
-  background: #22262e;
+  background: #1a1e24;
 }
 iconview:selected {
   color: rgba(255, 255, 255, 0.8);
-  background: #70a5eb;
+  background: #76b97f;
 }
 
 @keyframes rotate {
@@ -629,7 +629,7 @@ infobar {
   color: rgba(255, 255, 255, 0.8);
 }
 infobar.info {
-  background: #70a5eb;
+  background: #76b97f;
 }
 infobar.warning {
   background: #e9a180;
@@ -649,7 +649,7 @@ tooltip label {
   padding: 2px;
 }
 
-@define-color borders #22262e;
+@define-color borders #1a1e24;
 filechooser viewport,
 filechooser placessidebar,
 filechooser list {
@@ -665,14 +665,14 @@ filechooser treeview header box {
   padding: 5px;
 }
 filechooser treeview:selected {
-  background: #70a5eb;
+  background: #76b97f;
 }
 
 .pavucontrol-window {
   background: #171B20;
 }
 .pavucontrol-window tabs {
-  background: #22262e;
+  background: #1a1e24;
 }
 .pavucontrol-window tabs tab {
   padding: 16px;
@@ -690,11 +690,11 @@ window.thunar treeview {
 }
 window.thunar grid *:selected,
 window.thunar grid *:active {
-  background: #22262e;
+  background: #1a1e24;
   border-radius: 3px;
 }
 window.thunar .sidebar {
-  background: #22262e;
+  background: #1a1e24;
   padding: 1rem;
 }
 window.thunar treeview {
@@ -738,7 +738,7 @@ window.thunar separator {
   font-size: 12px;
 }
 
-@define-color borders #22262e;
+@define-color borders #1a1e24;
 window widget {
   background-color: #171B20;
 }
