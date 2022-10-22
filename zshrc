@@ -156,27 +156,24 @@ bindkey -s '^o' 'cd && ranger\n'
 
 
 # Aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias i3config="sudo -E nvim ~/.config/i3/config"
-alias vimconfig="nvim ~/.vimrc"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias i3config="vim ~/.config/i3/config"
+alias vimconfig="vim ~/.vimrc"
 alias ll='colorls -lA --sd --group-directories-first'
 alias ls='colorls --group-directories-first'
 alias configd="cd ~/.config/"
 alias rwall='feh /home/panickk/Wallpapers/ --bg-fill -z'
 alias cmatrix="cmatrix -C blue -b"
 alias pipes-sh='pipes.sh -c 4'
-alias tty-clock='tty-clock -s -c -C 4'
+#alias tty-clock='tty-clock -s -c -C 4'
 alias pacman='pacman --color=auto'
 alias runblender='~/Desktop/Apps/Blender/blender'
 alias tb='taskbook'
+alias mp3towav="sh ~/custom-scripts/mp3towav.sh"
 alias decay="sh ~/custom-scripts/print_colors.sh"
 alias panes="sh ~/custom-scripts/panes.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PF_ASCII="arch"
-
-# CS50 Aliases
-alias cc50="clang -fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -lcrypt -lcs50 -lm"
-

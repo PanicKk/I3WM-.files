@@ -10,8 +10,8 @@ name() {
 }
 
 color() {
-    [ $(cat /sys/class/net/w*/operstate) = down ] && echo "#e05f65" && exit
-    echo "#70a5eb"
+    [ $(cat /sys/class/net/w*/operstate) = down ] && echo "#ff000f" && exit
+    echo "#0095ff"
 }
 
 [ "$1" = "icon" ] && symbol && exit

@@ -1,2 +1,2 @@
 #!/bin/bash
-betterlockscreen -l blur 0.7
+betterlockscreen -l blur 0.5
